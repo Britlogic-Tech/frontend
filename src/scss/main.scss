@@ -1,0 +1,39 @@
+@use "colours";
+@use "navigation";
+@use "cards";
+@use "buttons";
+
+html {
+	background-color: var(--gray-3);
+	color: var(--primary-text);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.page-header {
+	container: inline-size / pageheader;
+	background-color: var(--white);
+	color: var(--primary-text);
+	min-height: 200px;
+	width: 100%;
+	padding-block-start: 2rem;
+	padding-block-end: 1rem;
+	margin-bottom: 4rem;
+	h1 {
+		font-size: 2rem;
+	}
+}
+
+footer {
+	container: inline-size / footer;
+	background-color: var(--primary);
+	color: var(--slate-3);
+	min-height: 200px;
+}
+
+.article {
+	width: 100%;
+}

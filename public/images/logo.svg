@@ -1,0 +1,43 @@
+<svg
+    width="400"
+    height="120"
+    viewBox="0 0 400 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <!-- Approximate “B” shape split into two colored paths -->
+    <!-- Left (blue) portion -->
+    <path 
+        fill="#003A8C" 
+        d="M30,15 
+           L30,105 
+           L50,105 
+           C80,105 80,60 50,60 
+           L50,15 
+           Z
+        " 
+    />
+    <!-- Right (red) portion -->
+    <path 
+        fill="#E10600"
+        d="M50,15
+           L50,60
+           C80,60 80,105 110,105
+           L110,60
+           C110,30 90,15 70,15
+           Z
+        "
+    />
+
+    <!-- “BRITLOGIC” text (approximate positioning & style) -->
+    <text
+        x="140"
+        y="78"
+        fill="#003A8C"
+        font-size="48"
+        font-family="sans-serif"
+        font-weight="bold"
+    >
+        BRITLOGIC
+    </text>
+</svg>

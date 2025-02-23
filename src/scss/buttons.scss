@@ -1,0 +1,89 @@
+%button-template {
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: var(--brit-blue);
+	color: var(--slate-3);
+	transition: 0.2s;
+	&:hover {
+		background-color: var(--accent);
+		color: var(--slate-1);
+	}
+}
+
+.back-button {
+	width: 24px;
+	height: 24px;
+	background-color: var(--slate-2);
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.button {
+	@extend %button-template;
+	.layout {
+		display: grid;
+		gap: 4px;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "btn-label";
+	}
+	&.button-primary {
+		background-color: var(--brit-blue);
+		color: var(--slate-3);
+		transition: 0.2s;
+		&:hover {
+			background-color: var(--accent);
+			color: var(--slate-1);
+		}
+	}
+
+	&.button-secondary {
+		background-color: var(--brit-red);
+		color: var(--slate-3);
+		transition: 0.2s;
+		&:hover {
+			background-color: var(--accent-hot);
+			color: var(--slate-1);
+		}
+	}
+	&.button-icon-right {
+		.layout {
+			grid-template-columns: 1fr 15px;
+			grid-template-areas: "btn-label btn-icon";
+			.button-icon {
+				margin-top: 1px;
+			}
+		}
+	}
+	&.button-icon-left {
+		.layout {
+			grid-template-columns: 15px 1fr;
+			grid-template-areas: "btn-icon btn-label";
+		}
+	}
+	&.button-icon-only {
+		.layout {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			grid-template-areas: "btn-icon";
+			gap: 0;
+		}
+	}
+	.button-icon {
+		grid-area: btn-icon;
+		display: grid;
+		place-items: center;
+		svg {
+			width: 15px;
+			height: 15px;
+		}
+	}
+	.button-label {
+		grid-area: btn-label;
+	}
+}
