@@ -13,6 +13,46 @@ html {
 	margin: 0 auto;
 }
 
+.sidebar-and-content {
+	container: inline-size / sidebarandcontent;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	grid-template-areas: "sidebar content";
+	gap: 2rem;
+	.container-sidebar-wrapper {
+		grid-area: sidebar;
+		container: inline-size / sidebar;
+		position: relative;
+		.container-sidebar-items {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+		.container-sidebar {
+			position: sticky;
+			top: 10rem;
+			z-index: 10;
+			h3 {
+				color: var(--gray-5);
+				font-size: 0.8rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-block-end: 1rem;
+			}
+			.sidebar-item {
+				color: var(--primary-text);
+				&.selected {
+					color: var(--accent);
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	.container-content-wrapper {
+		grid-area: content;
+	}
+}
+
 .page-header {
 	container: inline-size / pageheader;
 	background-color: var(--white);

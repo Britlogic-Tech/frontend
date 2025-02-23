@@ -1,5 +1,10 @@
 import { servicesCardsData, services } from "@/data/services";
 import Service from "@/components/ui/Service";
+import PageHeader from "@/components/ui/PageHeader";
+import ContainerWithSidebar from "@/components/structure/ContainerWithSidebar";
+import Main from "@/components/structure/Main";
+import SideBar from "@/components/ui/SideBar";
+
 type ParamsT = Promise<{ slug: string }>;
 
 export default async function page({ params }: { params: ParamsT }) {
@@ -15,10 +20,26 @@ export default async function page({ params }: { params: ParamsT }) {
 	const serviceCard = serviceFinder(servicesCardsData, slug);
 
 	if (!service || !serviceCard) return <div>Bad slug! {slug}</div>;
+
 	return (
-		<Service
-			service={service}
-			serviceCard={serviceCard}
-		/>
+		<>
+			<PageHeader
+				title={serviceCard.title}
+				subtitle={serviceCard.excerpt}
+				referrer="/services"
+			/>
+			<Main>
+				<ContainerWithSidebar
+					sidebar={
+						<SideBar
+							title="Our services"
+							items={servicesCardsData}
+							selected={serviceCard.slug}
+						/>
+					}
+					content={<Service service={service} />}
+				></ContainerWithSidebar>
+			</Main>
+		</>
 	);
 }

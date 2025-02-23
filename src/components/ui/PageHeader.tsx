@@ -1,6 +1,16 @@
 import clsx from "clsx";
 import Container from "@/components/structure/Container";
 import LongContent from "@/components/structure/LongContent";
+
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
 import Back from "@/components/ui/Back";
 type PageHeaderT = {
 	id?: string;
@@ -11,14 +21,7 @@ type PageHeaderT = {
 	referrer?: string;
 };
 
-const PageHeader = ({
-	id,
-	title,
-	subtitle,
-	className = "",
-	referrer = "",
-	breadcrumb,
-}: PageHeaderT) => {
+const PageHeader = ({ id, title, subtitle, className = "", referrer = "" }: PageHeaderT) => {
 	return (
 		<div
 			id={id}
@@ -27,7 +30,7 @@ const PageHeader = ({
 			<Container>
 				<div className="layout">
 					<Back referrer={referrer} />
-					{breadcrumb && <div className="page-header-breadcrumb">{breadcrumb}</div>}
+
 					<LongContent>
 						<div className="page-header-content">
 							<h1 className="page-header-title">{title}</h1>
