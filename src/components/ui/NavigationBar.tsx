@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Container from "@/components/structure/Container";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/buttons/Button";
@@ -18,11 +19,16 @@ const NavigationBar = ({ className, id, children }: NavbarPropsT) => {
 			<Container>
 				<div className={`nav-bar ${className}`.trim()}>
 					<div className="nav-bar-logo">
-						<Logo
-							type="full"
-							width={150}
-							variant="colour"
-						/>
+						<Link
+							href="/"
+							title="BritLogic Home"
+						>
+							<Logo
+								type="full"
+								width={150}
+								variant="colour"
+							/>
+						</Link>
 					</div>
 					<div className="nav-bar-navmenu">{children}</div>
 					<div className="nav-bar-cta">

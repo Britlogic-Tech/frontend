@@ -20,6 +20,18 @@ h4 {
 	margin: 0 auto;
 }
 
+.container-text-pages {
+	background-image: url("/images/logo-wallpaper.svg");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-attachment: fixed;
+
+	container: inline-size / textpages;
+	padding-block-start: 2rem;
+	padding-block-end: 2rem;
+}
+
 .sidebar-and-content {
 	container: inline-size / sidebarandcontent;
 	display: grid;

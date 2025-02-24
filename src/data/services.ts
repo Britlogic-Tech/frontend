@@ -7,19 +7,8 @@ export type ServiceCardData = {
 	image: ImageT;
 	actionUrl?: string;
 	actionLabel?: string;
+	cta?: { label: string; href: string };
 	sortOrder: number;
-};
-
-export type ServiceDescription = {
-	slug: string;
-	intro: string;
-	outro?: string;
-	image?: ImageT;
-	features?: Array<{
-		group?: string;
-		title: string;
-		content: string;
-	}>;
 };
 
 export const servicesCardsData: ServiceCardData[] = [
@@ -33,8 +22,10 @@ export const servicesCardsData: ServiceCardData[] = [
 			src: "https://britlogic.com/wp-content/uploads/2024/05/our-servs-1-org-300x195.jpg",
 			alt: "",
 		},
-		actionUrl: "https://britlogic.com/bespoke-software-development/",
-		actionLabel: "Read More",
+		cta: {
+			label: "Read More",
+			href: "services/bespoke-software-development/",
+		},
 		sortOrder: 10,
 	},
 	{
@@ -47,8 +38,10 @@ export const servicesCardsData: ServiceCardData[] = [
 			src: "https://britlogic.com/wp-content/uploads/2024/05/our-servs-2-org-300x195.jpg",
 			alt: "",
 		},
-		actionUrl: "https://britlogic.com/consulting-services/",
-		actionLabel: "Read More",
+		cta: {
+			label: "Read More",
+			href: "services/consulting-services/",
+		},
 		sortOrder: 20,
 	},
 	{
@@ -61,8 +54,10 @@ export const servicesCardsData: ServiceCardData[] = [
 			src: "https://britlogic.com/wp-content/uploads/2024/05/our-servs-3-org-300x194.jpg",
 			alt: "",
 		},
-		actionUrl: "https://britlogic.com/ux-ui-design/",
-		actionLabel: "Read More",
+		cta: {
+			label: "Read More",
+			href: "services/ux-ui-design/",
+		},
 		sortOrder: 30,
 	},
 	{
@@ -75,8 +70,10 @@ export const servicesCardsData: ServiceCardData[] = [
 			src: "https://britlogic.com/wp-content/uploads/2024/05/our-servs-4-org-300x195.jpg",
 			alt: "",
 		},
-		actionUrl: "https://britlogic.com/legacy-system-modernization/",
-		actionLabel: "Read More",
+		cta: {
+			label: "Read More",
+			href: "services/legacy-system-modernization/",
+		},
 		sortOrder: 40,
 	},
 	{
@@ -89,8 +86,10 @@ export const servicesCardsData: ServiceCardData[] = [
 			src: "https://britlogic.com/wp-content/uploads/2024/05/quality1-300x194.png",
 			alt: "",
 		},
-		actionUrl: "https://britlogic.com/quality-assurance/",
-		actionLabel: "Read More",
+		cta: {
+			label: "Read More",
+			href: "services/quality-assurance/",
+		},
 		sortOrder: 50,
 	},
 	{
@@ -103,12 +102,25 @@ export const servicesCardsData: ServiceCardData[] = [
 			src: "https://britlogic.com/wp-content/uploads/2024/05/cloud-300x194.png",
 			alt: "",
 		},
-		actionUrl: "https://britlogic.com/cloud-solutions/",
-		actionLabel: "Read More",
+		cta: {
+			label: "Read More",
+			href: "services/cloud-solutions/",
+		},
 		sortOrder: 60,
 	},
 ];
 
+export type ServiceDescription = {
+	slug: string;
+	intro: string;
+	outro?: string;
+	image?: ImageT;
+	features?: Array<{
+		group?: string;
+		title: string;
+		content: string;
+	}>;
+};
 export const services: ServiceDescription[] = [
 	{
 		slug: "bespoke-software-development",

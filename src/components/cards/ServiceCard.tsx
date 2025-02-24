@@ -1,27 +1,24 @@
-"use client";
 import type { ImageT } from "@/types/image";
 import Image from "next/image";
-import Button from "@/components/buttons/Button";
+import Link from "next/link";
+import Button from "@/components/buttons/ButtonLink";
 
 type ServcieCardPropsT = {
 	id: string;
 	image: ImageT;
 	title: string;
 	excerpt: string;
-	actionLabel?: string;
-	onClick?: () => void;
+	cta?: { label: string; href: string };
+	isCardInteravtive?: boolean;
 };
 
-const ServiceCard = ({ id, image, actionLabel, title, excerpt, onClick }: ServcieCardPropsT) => {
+const ServiceCard = ({ id, image, cta, title, excerpt, isCardInteravtive }: ServcieCardPropsT) => {
 	const imgSizes = { w: 300, h: 195 };
-	const handleClick = () => {
-		if (onClick) onClick();
-	};
 
 	return (
 		<div
 			id={id}
-			className="service-card"
+			className={`service-card ${isCardInteravtive ? "interactive" : ""}`}
 		>
 			<div className="service-card-layout">
 				<div className="service-card-image">
@@ -32,18 +29,23 @@ const ServiceCard = ({ id, image, actionLabel, title, excerpt, onClick }: Servci
 						height={imgSizes.h}
 					/>
 				</div>
-				<div className="service-card-content">
+				<div className={`service-card-content ${cta ? "has-cta" : ""}`}>
 					<h3>{title}</h3>
 					<p>{excerpt}</p>
-					{actionLabel && (
+				</div>
+				{cta && (
+					<Link
+						className="card-cta"
+						href={cta.href}
+						title={cta.label}
+					>
 						<Button
-							label={actionLabel}
-							onClick={handleClick}
+							label={cta.label}
 							iconName="ChevronRight"
 							iconPosition="right"
 						/>
-					)}
-				</div>
+					</Link>
+				)}
 			</div>
 		</div>
 	);

@@ -38,11 +38,11 @@ export const footerLinks = [
 		links: [
 			{
 				title: "Terms of Service",
-				href: "/terms",
+				href: "/about/terms-and-conditions",
 			},
 			{
 				title: "Privacy Policy",
-				href: "/privacy",
+				href: "/about/privacy-policy",
 			},
 			{
 				title: "Cookie Policy",

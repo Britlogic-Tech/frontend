@@ -1,8 +1,11 @@
+import Link from "next/link";
 import Main from "@/components/structure/Main";
-import Services from "@/app/services/servcies";
+import ServiceCard from "@/components/cards/ServiceCard";
 import ImageHero from "@/components/ui/heros/ImageHero";
 import TextHero from "@/components/ui/heros/TextHero";
 import CitationHero from "@/components/ui/heros/CitationHero";
+
+import { servicesCardsData } from "@/data/services";
 
 const Home = () => {
 	return (
@@ -26,7 +29,23 @@ const Home = () => {
 						href: "/services",
 					}}
 				/>
-				<Services />
+
+				<div className="flex flex-wrap gap-8 m-20">
+					{servicesCardsData.map((card) => {
+						delete card.cta;
+						return (
+							<Link
+								href={`/services/${card.slug}`}
+								key={card.id}
+							>
+								<ServiceCard
+									key={card.id}
+									{...{ ...card, excerpt: "", isCardInteravtive: true }}
+								/>
+							</Link>
+						);
+					})}
+				</div>
 			</Main>
 
 			<ImageHero

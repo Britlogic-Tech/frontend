@@ -3,11 +3,12 @@
 
 .service-card {
 	@extend %card-template;
+	display: block;
 	.service-card-layout {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 200px auto;
-		grid-template-areas: "image" "content";
+		grid-template-areas: "cardimage" "cardcontent";
 		gap: 1rem;
 		flex: 1 0 300px;
 		color: var(--primary-text);
@@ -16,7 +17,7 @@
 		max-width: 300px;
 		min-height: 300px;
 		.service-card-image {
-			grid-area: image;
+			grid-area: cardimage;
 			width: 100%;
 			background-color: rgba(204, 204, 204, 0.724);
 			img {
@@ -27,21 +28,39 @@
 			}
 		}
 		.service-card-content {
-			grid-area: content;
+			grid-area: cardcontent;
+			min-height: 100%;
 			padding: 1rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			align-items: flex-start;
 			gap: 1rem;
-			h3 {
-				font-size: 1.5rem;
-				line-height: 120%;
-			}
-			p {
-				font-size: 1rem;
+			min-height: 100%;
+			height: 100%;
+			position: relative;
+			&.has-cta {
+				p {
+					margin-bottom: 3rem !important;
+				}
 			}
 		}
+		h3 {
+			font-size: 1.5rem;
+			line-height: 120%;
+			min-height: 4ch;
+		}
+		p {
+			font-size: 1rem;
+		}
+	}
+	.card-cta {
+		grid-area: cta;
+		position: absolute;
+		margin: auto 1rem 1rem auto;
+		bottom: 0;
+		justify-self: flex-end;
+		align-self: flex-end;
 	}
 }
 
