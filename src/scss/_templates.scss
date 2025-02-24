@@ -1,0 +1,38 @@
+@use "colours";
+
+%card-template {
+	border-radius: 8px;
+	background-color: var(--card-bg);
+	overflow: hidden;
+	position: relative;
+	transition: 0.2s ease-in-out;
+	&.interactive {
+		cursor: pointer;
+		&:hover {
+			box-shadow: 0 4px 10px var(--shadow);
+		}
+	}
+}
+
+%button-template {
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: var(--brit-blue);
+	color: var(--slate-3);
+	transition: 0.2s;
+	&:hover {
+		background-color: var(--accent);
+		color: var(--slate-1);
+	}
+}
+
+%eyebrow {
+	font-size: 0.7rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	list-style-type: none;
+	list-style: 110%;
+}

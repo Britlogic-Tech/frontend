@@ -1,17 +1,5 @@
 @use "colours";
-%card-template {
-	border-radius: 8px;
-	background-color: var(--card-bg);
-	overflow: hidden;
-	position: relative;
-	transition: 0.2s ease-in-out;
-	&.interactive {
-		cursor: pointer;
-		&:hover {
-			box-shadow: 0 4px 10px var(--shadow);
-		}
-	}
-}
+@use "templates";
 
 .service-card {
 	@extend %card-template;
@@ -63,6 +51,7 @@
 	grid-template-rows: auto 1fr;
 	grid-template-areas: "title" "content";
 	gap: 0.25rem;
+
 	.service-feature-title {
 		grid-area: title;
 		h3 {
@@ -82,15 +71,14 @@
 	@extend %card-template;
 	display: inline-block;
 	padding: 0.5rem 1rem;
-	border-radius: 0.5rem;
 	font-size: 1rem;
 	h3 {
-		font-size: 1rem;
+		font-size: 0.8rem;
 		font-weight: 700;
 		line-height: 120%;
 	}
 	p {
-		font-size: 0.8rem;
+		font-size: 0.6rem;
 	}
 	background-color: var(--gray-1);
 	color: var(--primary-text);
@@ -107,6 +95,7 @@
 
 .office-chip {
 	@extend .chip;
+	border-radius: 0;
 	max-width: 200px;
 	padding: 0;
 	h3 {

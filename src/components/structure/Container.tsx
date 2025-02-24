@@ -4,7 +4,7 @@ type ContainerProps = {
 	children: React.ReactNode;
 };
 
-const Container = ({ id, className, children }: ContainerProps) => {
+const Container = ({ id, className = "", children }: ContainerProps) => {
 	return (
 		<div
 			id={id}

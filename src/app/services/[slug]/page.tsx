@@ -9,7 +9,6 @@ type ParamsT = Promise<{ slug: string }>;
 
 export default async function page({ params }: { params: ParamsT }) {
 	const { slug } = await params;
-	console.log("PARAM-->", slug);
 	if (!slug) return <div>Not found</div>;
 
 	function serviceFinder<T extends { slug: string }>(set: Array<T>, slug: string): T | undefined {
@@ -28,7 +27,7 @@ export default async function page({ params }: { params: ParamsT }) {
 				subtitle={serviceCard.excerpt}
 				referrer="/services"
 			/>
-			<Main>
+			<Main className="mb-12">
 				<ContainerWithSidebar
 					sidebar={
 						<SideBar

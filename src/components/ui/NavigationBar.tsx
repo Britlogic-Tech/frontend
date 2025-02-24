@@ -2,6 +2,7 @@
 import Container from "@/components/structure/Container";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/buttons/Button";
+
 type NavbarPropsT = {
 	className?: string;
 	id?: string;
@@ -17,12 +18,13 @@ const NavigationBar = ({ className, id, children }: NavbarPropsT) => {
 			<Container>
 				<div className={`nav-bar ${className}`.trim()}>
 					<div className="nav-bar-logo">
-						<Logo />
+						<Logo
+							type="full"
+							width={150}
+							variant="colour"
+						/>
 					</div>
-					<div className="nav-bar-navmenu">
-						{children}
-						navigation menu - navigation items btn:in touch{" "}
-					</div>
+					<div className="nav-bar-navmenu">{children}</div>
 					<div className="nav-bar-cta">
 						<Button
 							label={"Get in touch"}

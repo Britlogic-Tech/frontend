@@ -1,29 +1,17 @@
-import Main from "@/components/structure/Main";
-import ServiceCard from "@/components/cards/ServiceCard";
-import Chip from "@/components/cards/Chip";
-import { servicesCardsData } from "@/data/services";
+import PageHeader from "@/components/ui/PageHeader";
+import Services from "./servcies";
 
-const Services = () => {
+const page = () => {
 	return (
-		<Main>
-			<Chip
-				id="1"
-				title="Services"
-				excerpt="We offer a wide range of services to help you grow your business."
-				variant="light"
-				isInteractive={true}
+		<>
+			<PageHeader
+				title="Our services"
+				subtitle="We offer a wide range of services to help you with your business needs."
+				referrer="/"
 			/>
-
-			<div className="flex flex-wrap gap-8 m-20">
-				{servicesCardsData.map((card) => (
-					<ServiceCard
-						key={card.id}
-						{...card}
-					/>
-				))}
-			</div>
-		</Main>
+			<Services />
+		</>
 	);
 };
 
-export default Services;
+export default page;

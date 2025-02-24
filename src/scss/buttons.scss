@@ -1,17 +1,5 @@
-%button-template {
-	padding: 4px 8px;
-	border-radius: 4px;
-	font-size: 0.8rem;
-	font-weight: 600;
-	cursor: pointer;
-	background-color: var(--brit-blue);
-	color: var(--slate-3);
-	transition: 0.2s;
-	&:hover {
-		background-color: var(--accent);
-		color: var(--slate-1);
-	}
-}
+@use "colours";
+@use "templates";
 
 .back-button {
 	width: 24px;

@@ -2,10 +2,16 @@
 @use "navigation";
 @use "cards";
 @use "buttons";
+@use "templates";
 
 html {
 	background-color: var(--gray-3);
 	color: var(--primary-text);
+}
+
+h4 {
+	@extend %eyebrow;
+	color: var(--accent);
 }
 
 .container {
@@ -45,6 +51,9 @@ html {
 					color: var(--accent);
 					font-weight: 700;
 				}
+				&:hover {
+					color: var(--accent);
+				}
 			}
 		}
 	}
@@ -67,13 +76,57 @@ html {
 	}
 }
 
+.article {
+	width: 100%;
+}
+
 footer {
 	container: inline-size / footer;
 	background-color: var(--primary);
 	color: var(--slate-3);
 	min-height: 200px;
-}
+	font-size: 0.8rem;
+	padding-block: 2rem;
+	.footer-layout {
+		container: inline-size / footerlayout;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1rem;
+		.footer-part {
+			max-width: 30%;
+			min-width: 200px;
+			flex: 1 1 auto;
+			&.large {
+				min-width: 350px;
+				padding-inline-end: 3rem;
+			}
+		}
+	}
 
-.article {
-	width: 100%;
+	h4 {
+		@extend %eyebrow;
+		color: var(--secondary);
+	}
+	a {
+		line-height: 100%;
+		&:hover {
+			color: var(--accent-cold);
+		}
+	}
+	.footer-rights {
+		width: 100%;
+		text-align: center;
+		padding-block: 2rem;
+		.footer-claim {
+			font-size: 0.7rem;
+			color: var(--tritary);
+		}
+		.footer-disclaim {
+			font-size: 0.5rem;
+			color: var(--secondary);
+		}
+	}
 }

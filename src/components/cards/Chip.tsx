@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
 type ServcieCardPropsT = {
-	id: string;
+	id?: string;
 	title: string;
-	excerpt: string;
+	excerpt?: string;
 	isInteractive?: boolean;
 	className?: string;
 	variant?: "dark" | "light";
@@ -29,7 +29,7 @@ const Chip = ({
 			)}
 		>
 			<h3>{title}</h3>
-			<p>{excerpt}</p>
+			{excerpt && <p>{excerpt}</p>}
 		</div>
 	);
 };
