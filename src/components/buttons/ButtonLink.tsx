@@ -1,9 +1,8 @@
 import clsx from "clsx";
 import Icons from "@/components/icons";
-type GeneralButtonPropsT = {
-	type?: "primary" | "secondary";
+type ButtonLinkPropsT = {
+	type?: "primary" | "secondary" | "link";
 	iconName?: string;
-	onClick?: () => void;
 	className?: string;
 	id?: string;
 } & (
@@ -17,15 +16,14 @@ type GeneralButtonPropsT = {
 	  }
 );
 
-const Button = ({
+const ButtonLink = ({
 	iconName,
 	iconPosition = "right",
 	label,
 	type = "primary",
 	className = "",
 	id,
-	onClick,
-}: GeneralButtonPropsT) => {
+}: ButtonLinkPropsT) => {
 	className = clsx(
 		"button",
 		`button-${type}`,
@@ -37,17 +35,12 @@ const Button = ({
 		className
 	);
 
-	const handleClick = () => {
-		if (onClick) onClick();
-	};
-
 	const Icon = iconName ? Icons[iconName as keyof typeof Icons] : null;
 
 	return (
 		<div
 			id={id}
 			className={className}
-			onClick={handleClick}
 		>
 			<div className="layout">
 				{Icon && (
@@ -61,4 +54,4 @@ const Button = ({
 	);
 };
 
-export default Button;
+export default ButtonLink;

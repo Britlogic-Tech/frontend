@@ -1,3 +1,4 @@
+@use "fonts";
 @use "colours";
 @use "navigation";
 @use "cards";
@@ -127,6 +128,207 @@ footer {
 		.footer-disclaim {
 			font-size: 0.5rem;
 			color: var(--secondary);
+		}
+	}
+}
+
+.hero-citation {
+	--minHeight: 200px;
+	padding: 2rem;
+	container: inline-size / citationhero;
+	min-height: var(--minHeight);
+	.hero-text {
+		position: relative;
+		display: grid;
+		place-items: center;
+		position: relative;
+		max-width: 100%;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		min-height: var(--minHeight);
+	}
+
+	.backplate {
+		position: relative;
+		max-width: 70% !important;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+		z-index: 10;
+
+		h2 {
+			@extend .font-hero;
+			font-size: 3rem;
+			line-height: 95%;
+			letter-spacing: -0.05ch;
+			text-align: center;
+			color: var(--primary-text);
+		}
+
+		h3 {
+			font-size: 1.5rem;
+			text-align: center;
+			font-weight: 400;
+			line-height: 110%;
+		}
+	}
+}
+
+.hero-image {
+	--minHeight: 300px;
+	&.image-full,
+	&.textual {
+		--minHeight: 500px !important;
+	}
+	container: inline-size / heroimage;
+	background-color: var(--white);
+	min-height: var(--minHeight, 300px);
+	.layout {
+		width: 100%;
+		position: relative;
+		&.image-onside {
+			display: grid;
+			grid-template-columns: minmax(300px, 50%) minmax(300px, 50%);
+			grid-template-rows: 1fr;
+			&.image-left {
+				grid-template-areas: "heroimage herotext";
+			}
+			&.image-right {
+				grid-template-areas: "herotext heroimage";
+			}
+			.hero-image {
+				grid-area: heroimage;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				display: grid;
+				position: relative;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			.hero-text {
+				grid-area: herotext;
+				display: grid;
+				place-items: center;
+				position: relative;
+				max-width: 100%;
+				padding: 12px 0;
+			}
+		}
+
+		&.image-full {
+			position: relative;
+			overflow: hidden;
+			min-height: 500px;
+
+			.hero-image {
+				position: relative;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				min-height: 500px;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			.hero-text {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: grid;
+				place-items: center;
+			}
+		}
+		&.textual {
+			position: relative;
+			overflow: hidden;
+
+			.hero-text {
+				position: relative;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: grid;
+				place-items: center;
+				min-height: 500px;
+			}
+		}
+
+		.backplate {
+			position: relative;
+			max-width: 70% !important;
+			padding: 1rem;
+			border-radius: 0.5rem;
+
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			gap: 12px;
+			z-index: 10;
+			&.transparent {
+				background-color: transparent;
+				color: var(--primary-text);
+			}
+			&.dark {
+				background-color: rgba(0, 0, 0, 0.2);
+				color: var(--white);
+				backdrop-filter: blur(10px);
+			}
+			&.light {
+				background-color: rgba(255, 255, 255, 0.3);
+				color: var(--black);
+				backdrop-filter: blur(10px);
+			}
+			h2 {
+				@extend .font-hero;
+				font-size: 3rem;
+				line-height: 95%;
+				letter-spacing: -0.05ch;
+				text-align: center;
+				background: linear-gradient(to right, var(--brit-blue), var(--brit-red));
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+			h3 {
+				font-size: 1.5rem;
+				text-align: center;
+				font-weight: 400;
+				line-height: 100%;
+			}
+		}
+	}
+}
+
+.hero-html {
+	font-size: 1rem;
+	ul {
+		padding: 0.5rem 0;
+		list-style-type: none;
+		li {
+			position: relative;
+			padding-left: 1.25em;
+			&::before {
+				content: "\2713"; // Unicode for tick mark
+				position: absolute;
+				left: 0;
+				color: var(--accent);
+			}
 		}
 	}
 }

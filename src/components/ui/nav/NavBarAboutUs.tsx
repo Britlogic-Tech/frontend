@@ -3,12 +3,12 @@ import Chip from "@/components/cards/Chip";
 
 const items = [
 	{
-		title: "About us",
+		title: "About BritLogic",
 		slug: "about-us",
 		href: "/services",
 	},
 	{
-		title: "Contact us",
+		title: "Contact BritLogic",
 		slug: "contact-us",
 		href: "/services",
 	},
