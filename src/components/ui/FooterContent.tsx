@@ -18,13 +18,12 @@ const FooterContent = () => {
 				</div>
 				<div className="footer-part">
 					<div className="flex flex-col gap-2">
-						<FooterLinks />
+						<FooterLinks includedParts={["about", "legal"]} />
 					</div>
 				</div>
 				<div className="footer-part">
-					<h4>Offices</h4>
 					<div className="flex flex-col gap-2">
-						<FooterOffices />
+						<FooterLinks includedParts={["support"]} />
 					</div>
 				</div>
 			</div>

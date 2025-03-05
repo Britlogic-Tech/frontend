@@ -18,6 +18,7 @@ h4 {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding-inline: 2rem;
 }
 
 .container-text-pages {
@@ -27,20 +28,20 @@ h4 {
 	background-position: right bottom;
 	background-attachment: fixed;
 
-	container: inline-size / textpages;
+	container: textpages/ inline-size;
 	padding-block-start: 2rem;
 	padding-block-end: 2rem;
 }
 
 .sidebar-and-content {
-	container: inline-size / sidebarandcontent;
+	container: sidebarandcontent / inline-size;
 	display: grid;
 	grid-template-columns: 300px 1fr;
 	grid-template-areas: "sidebar content";
 	gap: 2rem;
 	.container-sidebar-wrapper {
 		grid-area: sidebar;
-		container: inline-size / sidebar;
+		container: sidebar / inline-size;
 		position: relative;
 		.container-sidebar-items {
 			display: flex;
@@ -73,13 +74,19 @@ h4 {
 	.container-content-wrapper {
 		grid-area: content;
 	}
+	@media screen and (max-width: 850px) {
+		display: block;
+		.container-sidebar-wrapper {
+			display: none;
+		}
+	}
 }
 
 .page-header {
-	container: inline-size / pageheader;
+	container: pageheader/ inline-size;
 	background-color: var(--white);
 	color: var(--primary-text);
-	min-height: 200px;
+	min-height: 224px;
 	width: 100%;
 	padding-block-start: 2rem;
 	padding-block-end: 1rem;
@@ -94,14 +101,14 @@ h4 {
 }
 
 footer {
-	container: inline-size / footer;
+	container: footer / inline-size;
 	background-color: var(--primary);
 	color: var(--slate-3);
 	min-height: 200px;
 	font-size: 0.8rem;
 	padding-block: 2rem;
 	.footer-layout {
-		container: inline-size / footerlayout;
+		container: footerlayout / inline-size;
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
@@ -147,7 +154,7 @@ footer {
 .hero-citation {
 	--minHeight: 200px;
 	padding: 2rem;
-	container: inline-size / citationhero;
+	container: citationhero / inline-size;
 	min-height: var(--minHeight);
 	.hero-text {
 		position: relative;
@@ -197,7 +204,7 @@ footer {
 	&.textual {
 		--minHeight: 500px !important;
 	}
-	container: inline-size / heroimage;
+	container: heroimage / inline-size;
 	background-color: var(--white);
 	min-height: var(--minHeight, 300px);
 	.layout {
@@ -343,4 +350,12 @@ footer {
 			}
 		}
 	}
+}
+
+.grid-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	margin: 2rem auto;
+	justify-content: center;
 }

@@ -16,23 +16,7 @@ export const footerLinks = [
 			},
 		],
 	},
-	{
-		title: "Support",
-		links: [
-			{
-				title: "FAQ",
-				href: "/faq",
-			},
-			{
-				title: "Help",
-				href: "/help",
-			},
-			{
-				title: "Support",
-				href: "/support",
-			},
-		],
-	},
+
 	{
 		title: "Legal",
 		links: [
@@ -47,6 +31,23 @@ export const footerLinks = [
 			{
 				title: "Cookie Policy",
 				href: "/cookie",
+			},
+		],
+	},
+	{
+		title: "Support",
+		links: [
+			{
+				title: "FAQ",
+				href: "/faq",
+			},
+			{
+				title: "Help",
+				href: "/help",
+			},
+			{
+				title: "Support",
+				href: "/support",
 			},
 		],
 	},

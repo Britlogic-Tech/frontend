@@ -24,10 +24,15 @@
 		.nav-bar-navmenu {
 			grid-area: navmenu;
 			padding-inline-start: 2rem;
+
 			.item {
 				text-transform: uppercase;
 				font-size: 0.8rem;
 				font-weight: 500;
+				white-space: nowrap;
+				&:hover {
+					color: var(--brit-blue);
+				}
 			}
 		}
 		.nav-bar-cta {

@@ -12,9 +12,9 @@
 		gap: 1rem;
 		flex: 1 0 300px;
 		color: var(--primary-text);
-		width: minmax(200px, 300px);
+		width: 100%;
 		min-width: 200px;
-		max-width: 300px;
+		max-width: 325px;
 		min-height: 300px;
 		.service-card-image {
 			grid-area: cardimage;
@@ -61,6 +61,13 @@
 		bottom: 0;
 		justify-self: flex-end;
 		align-self: flex-end;
+	}
+
+	@media screen and (max-width: 650px) {
+		.service-card-layout {
+			flex: 1 0 0;
+			max-width: 100%;
+		}
 	}
 }
 

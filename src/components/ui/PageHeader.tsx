@@ -2,15 +2,6 @@ import clsx from "clsx";
 import Container from "@/components/structure/Container";
 import LongContent from "@/components/structure/LongContent";
 
-import {
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbList,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-
 import Back from "@/components/ui/Back";
 type PageHeaderT = {
 	id?: string;
