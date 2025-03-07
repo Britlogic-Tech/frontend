@@ -1,5 +1,5 @@
 import Main from "@/components/structure/Main";
-import Services from "@/app/services/Servcies";
+import Services from "@/app/services/Services";
 import ImageHero from "@/components/ui/heros/ImageHero";
 import TextHero from "@/components/ui/heros/TextHero";
 import CitationHero from "@/components/ui/heros/CitationHero";
