@@ -4,6 +4,8 @@ import ImageHero from "@/components/ui/heros/ImageHero";
 import TextHero from "@/components/ui/heros/TextHero";
 import CitationHero from "@/components/ui/heros/CitationHero";
 import Section from "@/components/structure/Section";
+import Image from "next/image";
+import Link from "next/link";
 
 const Home = () => {
 	return (
@@ -109,6 +111,20 @@ const Home = () => {
 					</ul>
 				</div>
 			</ImageHero>
+
+			<TextHero title="A few of our amazing clients">
+				<Link
+					className="max-w-[450px]"
+					href="/clients"
+				>
+					<Image
+						src="/images/partners/partners.png"
+						alt="Our Partners"
+						width={900}
+						height={900}
+					/>
+				</Link>
+			</TextHero>
 		</>
 	);
 };

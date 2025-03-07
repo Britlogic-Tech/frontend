@@ -26,7 +26,10 @@ section h3 {
 
 h4 {
 	@extend %eyebrow;
-	color: var(--accent);
+	color: var(--black);
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-color: var(--accent-hot);
 }
 
 .subsection {
@@ -95,6 +98,7 @@ h4 {
 	}
 	.container-content-wrapper {
 		grid-area: content;
+		color: var(--primary-text);
 	}
 	@media screen and (max-width: 850px) {
 		display: block;
@@ -387,7 +391,7 @@ footer {
 
 .highlight {
 	@extend .font-hero;
-	background-color: var(--gray-3);
+	background-color: var(--slate-1);
 	margin-block: 3rem;
 	padding: 3rem;
 	border-radius: 0.5rem;

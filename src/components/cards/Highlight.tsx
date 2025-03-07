@@ -1,5 +1,5 @@
 type HighlightPropsT = {
-	title: string;
+	title?: string;
 	children: React.ReactNode;
 	className?: string;
 };
@@ -7,7 +7,8 @@ type HighlightPropsT = {
 const Highlight = ({ title, children, className = "" }: HighlightPropsT) => {
 	return (
 		<div className={`highlight ${className}`}>
-			<h2>{title}</h2> {children}
+			{title && <h2>{title}</h2>}
+			<div>{children}</div>
 		</div>
 	);
 };

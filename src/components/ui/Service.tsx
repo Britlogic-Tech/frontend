@@ -1,6 +1,7 @@
 import { type ServiceDescription } from "@/data/services";
 import Article from "@/components/structure/Article";
 import LongContent from "@/components/structure/LongContent";
+import Highlight from "../cards/Highlight";
 
 type Features = ServiceDescription["features"];
 
@@ -48,11 +49,11 @@ const Service = ({ service: s }: { service: ServiceDescription }) => {
 			)}
 
 			{s.outro && (
-				<Article className="my-8">
-					<LongContent>
+				<Highlight>
+					<Article>
 						<div dangerouslySetInnerHTML={{ __html: s.outro }} />
-					</LongContent>
-				</Article>
+					</Article>
+				</Highlight>
 			)}
 		</>
 	);
@@ -71,7 +72,7 @@ function PrintFeatures({ features }: { features: Features }) {
 				>
 					<LongContent>
 						<div className="service-feature-title">
-							<h3>{f.title}</h3>
+							<h2 className="mt-0">{f.title}</h2>
 						</div>
 						<div className="service-feature-content">
 							<p>{f.content}</p>
