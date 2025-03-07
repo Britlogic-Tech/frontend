@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/structure/Container";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/buttons/Button";
+import { useRouter } from "next/navigation";
 
 type NavbarPropsT = {
 	className?: string;
@@ -11,6 +12,11 @@ type NavbarPropsT = {
 };
 
 const NavigationBar = ({ className, id, children }: NavbarPropsT) => {
+	const router = useRouter();
+	const handleClick = () => {
+		router.push("/contact");
+	};
+
 	return (
 		<nav
 			id={id}
@@ -34,7 +40,7 @@ const NavigationBar = ({ className, id, children }: NavbarPropsT) => {
 					<div className="nav-bar-cta">
 						<Button
 							label={"Get in touch"}
-							onClick={() => {}}
+							onClick={handleClick}
 						/>
 					</div>
 				</div>

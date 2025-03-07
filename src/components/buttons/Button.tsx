@@ -1,9 +1,13 @@
+import { FormEvent } from "react";
 import clsx from "clsx";
 import Icons from "@/components/icons";
 type GeneralButtonPropsT = {
-	type?: "primary" | "secondary";
+	isDisabled?: boolean;
+	variant?: "primary" | "secondary";
+	type?: "button" | "submit" | "reset";
 	iconName?: string;
 	onClick?: () => void;
+	onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
 	className?: string;
 	id?: string;
 } & (
@@ -21,33 +25,41 @@ const Button = ({
 	iconName,
 	iconPosition = "right",
 	label,
-	type = "primary",
+	variant = "primary",
+	type = "button",
 	className = "",
 	id,
+	isDisabled = false,
 	onClick,
+	onSubmit,
 }: GeneralButtonPropsT) => {
 	className = clsx(
 		"button",
-		`button-${type}`,
+		`button-${variant}`,
 		{
 			"button-icon-only": !label,
 			"button-icon-right": iconName && iconPosition === "right",
 			"button-icon-left": iconName && iconPosition === "left",
+			"button-disabled": isDisabled,
 		},
 		className
 	);
 
-	const handleClick = () => {
+	const handleClick = (e: FormEvent<HTMLButtonElement>) => {
+		if (isDisabled) return;
 		if (onClick) onClick();
+		if (onSubmit) onSubmit(e as unknown as FormEvent<HTMLFormElement>);
 	};
 
 	const Icon = iconName ? Icons[iconName as keyof typeof Icons] : null;
 
 	return (
-		<div
+		<button
 			id={id}
+			type={type}
 			className={className}
 			onClick={handleClick}
+			disabled={isDisabled}
 		>
 			<div className="layout">
 				{Icon && (
@@ -57,7 +69,7 @@ const Button = ({
 				)}
 				<div className="button-label">{label}</div>
 			</div>
-		</div>
+		</button>
 	);
 };
 
