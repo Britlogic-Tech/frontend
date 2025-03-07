@@ -2,7 +2,8 @@ import Main from "@/components/structure/Main";
 import ContainerLongText from "@/components/structure/ContainerLongText";
 import ImageHero from "@/components/ui/heros/ImageHero";
 import TestimonialCard from "@/components/cards/TestimonialCard";
-import { partnerData, testimonies } from "@/data/partners";
+import { testimonies } from "@/data/partners";
+import Image from "next/image";
 
 export default function Page() {
 	return (
@@ -57,6 +58,14 @@ export default function Page() {
 						software development industry.
 					</p>
 					{testimonies && testimonies[1] && <TestimonialCard {...testimonies[1]} />}
+					<div className="w-[500px] h-[500px] m-auto">
+						<Image
+							src="/images/partners/partners.png"
+							alt="Our Partners"
+							width={900}
+							height={900}
+						/>
+					</div>
 					<p>
 						Whether you need to streamline operations, enhance customer engagement, or innovate your
 						business processes, our client is equipped with the expertise and experience to turn
