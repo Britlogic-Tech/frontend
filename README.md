@@ -5,27 +5,65 @@ Mostly written in _TypeScript_ and _Scss_
 
 ## Getting Started
 
-1- First, clone the repo and install dependencies
+1- To run locally, you will need Node.
+
+Install NVM:
+[Read more here](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating):
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+```
+
+Running the above commands downloads a script and runs it. The script clones the nvm repository to
+`~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file
+(`~/.bashrc`, `~/.bash_profile`, `~/.zshrc`, or `~/.profile`). If you find the install script is
+updating the wrong profile file, set the `$PROFILE` env var to the profile file’s path, and then
+rerun the installation script.
+
+```bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+or on Mac
+
+```bash
+brew upgrade
+brew install nvm
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
+echo '[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"' >> ~/.zshrc
+echo '[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Then install Node 22 and use it
+
+```bash
+nvm install 22
+nvm use 22
+```
+
+2- Clone the repo and install dependencies
 
 ```bash
 npm install
 ```
 
-2- Run the development server:
+3- Run the development server:
 
 ```bash
 npm run dev
 ```
 
-3- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4- Make sure to build production grade for serving on production
+5- Make sure to build production grade for serving on production
 
 ```bash
 npm run build
 ```
 
-5- You can start a built-in Node server by running `start` (only after `build`)
+6- You can start a built-in Node server by running `start` (only after `build`)
 
 ```bash
 npm run start
