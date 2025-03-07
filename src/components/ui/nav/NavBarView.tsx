@@ -1,31 +1,16 @@
 import Link from "next/link";
 import Chip from "@/components/cards/Chip";
+import { type NavigationData } from "@/data/navigation";
 
-const items = [
-	{
-		title: "About BritLogic",
-		slug: "about-us",
-		href: "/services",
-	},
-	{
-		title: "Contact BritLogic",
-		slug: "contact-us",
-		href: "/services",
-	},
-	{
-		title: "Join our team",
-		slug: "career",
-		href: "/contact",
-	},
-];
+export default function NavBarView({ navgationItemData }: { navgationItemData: NavigationData }) {
+	const items = navgationItemData.items!;
 
-export default function NavServices() {
 	return (
 		<>
 			<div className="flex gap-4">
-				<Link href={"/services"}>
+				<Link href={navgationItemData.url}>
 					<div className="whitespace-nowrap text-lg font-bold text-slate-900 border-r border-solid border-slate-700 h-full pe-4">
-						About us
+						{navgationItemData.title}
 					</div>
 				</Link>
 
@@ -33,7 +18,7 @@ export default function NavServices() {
 					{items.map((item) => (
 						<Link
 							key={item.slug}
-							href={`/services/${item.slug}`}
+							href={`${item.href}/${item.slug}`}
 						>
 							<Chip
 								key={item.slug}

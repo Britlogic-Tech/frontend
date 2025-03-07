@@ -1,8 +1,6 @@
-import type { NavViewT } from "./nav";
 import { navigationData } from "@/data/navigation";
 import NavBarCard from "@/components/ui/nav/NavBarCard";
-
-import NavView from "./nav";
+import NavBarView from "./nav/NavBarView";
 
 import {
 	NavigationMenu,
@@ -22,17 +20,17 @@ const navigation = () => {
 				<NavigationMenuList>
 					{navigationData.map((item) => (
 						<NavigationMenuItem key={item.title}>
-							{item.view && (
+							{item.viewName && item.items && (
 								<>
 									<NavigationMenuTrigger className="item">{item.title}</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<NavBarCard>
-											<NavView view={item.view as NavViewT} />
+											<NavBarView navgationItemData={item} />
 										</NavBarCard>
 									</NavigationMenuContent>
 								</>
 							)}
-							{!item.view && (
+							{!item.viewName && (
 								<NavigationMenuLink
 									className="item px-4 py-2"
 									href={item.url}
