@@ -15,10 +15,18 @@ type ImageHeroPropsT = {
 		href: string;
 	};
 	subtitle?: string;
-	html?: string;
-};
+} & ({ html?: string; children?: never } | { html?: never; children?: React.ReactNode });
 
-const ImageHero = ({ image, cta, title, subtitle, textSide, backplate, html }: ImageHeroPropsT) => {
+const ImageHero = ({
+	image,
+	cta,
+	title,
+	subtitle,
+	textSide,
+	backplate,
+	html,
+	children,
+}: ImageHeroPropsT) => {
 	const style_imageSide = !textSide
 		? "image-full"
 		: textSide === "left"
@@ -52,6 +60,7 @@ const ImageHero = ({ image, cta, title, subtitle, textSide, backplate, html }: I
 									dangerouslySetInnerHTML={{ __html: html }}
 								/>
 							)}
+							{children && <div className="hero-html">{children}</div>}
 
 							{cta && (
 								<Link href={cta.href}>

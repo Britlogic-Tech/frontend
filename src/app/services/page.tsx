@@ -1,5 +1,5 @@
 import PageHeader from "@/components/ui/PageHeader";
-import Services from "./servcies";
+import Services from "./Servcies";
 
 const page = () => {
 	return (

@@ -174,9 +174,9 @@ footer {
 }
 
 .hero-citation {
-	--minHeight: 200px;
-	padding: 2rem;
 	container: citationhero / inline-size;
+	--minHeight: 200px;
+	padding: 3rem 2rem;
 	min-height: var(--minHeight);
 	.hero-text {
 		position: relative;
@@ -215,7 +215,8 @@ footer {
 			font-size: 1.5rem;
 			text-align: center;
 			font-weight: 400;
-			line-height: 110%;
+			line-height: 120%;
+			margin-block-end: 2rem;
 		}
 	}
 }
@@ -345,6 +346,7 @@ footer {
 				-webkit-background-clip: text;
 				background-clip: text;
 				color: transparent;
+				padding-bottom: 1ch;
 			}
 			h3 {
 				font-size: 1.5rem;
