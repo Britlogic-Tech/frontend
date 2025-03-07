@@ -62,6 +62,7 @@ const Home = () => {
 			</ImageHero>
 
 			<ImageHero
+				className="!bg-gray-200"
 				image={{
 					src: "/images/business-support-services.png",
 					alt: "why choose britlogic - a group of happy clients celebrate success anbd growth",

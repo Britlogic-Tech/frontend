@@ -15,6 +15,7 @@ type ImageHeroPropsT = {
 		href: string;
 	};
 	subtitle?: string;
+	className?: string;
 } & ({ html?: string; children?: never } | { html?: never; children?: React.ReactNode });
 
 const ImageHero = ({
@@ -24,6 +25,7 @@ const ImageHero = ({
 	subtitle,
 	textSide,
 	backplate,
+	className = "",
 	html,
 	children,
 }: ImageHeroPropsT) => {
@@ -37,7 +39,7 @@ const ImageHero = ({
 
 	return (
 		<div
-			className={clsx("hero-image", {
+			className={clsx("hero-image", className, {
 				"image-full": !textSide,
 			})}
 		>
