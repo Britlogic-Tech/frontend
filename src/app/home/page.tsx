@@ -14,8 +14,8 @@ const Home = () => {
 				title="WHERE INNOVATION<br>MEETS EXPERTISE!"
 				subtitle="Cutting-edge software solutions to drive businesses forward"
 				cta={{
-					text: "hero cta",
-					href: "/",
+					text: "Contact an expert",
+					href: "/contact",
 				}}
 			/>
 
@@ -72,8 +72,8 @@ const Home = () => {
 				textSide="left"
 				title="Why choose BritLogic?"
 				cta={{
-					text: "hero cta",
-					href: "/",
+					text: "More about us",
+					href: "/about",
 				}}
 			>
 				<div>

@@ -1,7 +1,7 @@
 import type { ImageT } from "@/types/image";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/buttons/ButtonLink";
+import ButtonLink from "@/components/buttons/ButtonLink";
 
 type ServcieCardPropsT = {
 	id: string;
@@ -39,7 +39,7 @@ const ServiceCard = ({ id, image, cta, title, excerpt, isCardInteravtive }: Serv
 						href={cta.href}
 						title={cta.label}
 					>
-						<Button
+						<ButtonLink
 							label={cta.label}
 							iconName="ChevronRight"
 							iconPosition="right"

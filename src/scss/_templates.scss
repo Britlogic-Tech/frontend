@@ -17,15 +17,22 @@
 %button-template {
 	padding: 8px 12px;
 	border-radius: 4px;
-	font-size: 0.8rem;
-	font-weight: 600;
+	font-size: 0.95rem;
+	font-weight: 100;
 	cursor: pointer;
 	background-color: var(--brit-blue);
-	color: var(--slate-3);
+	color: var(--gray-1);
 	transition: 0.2s;
 	&:hover {
 		background-color: var(--accent);
-		color: var(--slate-1);
+		color: var(--white);
+	}
+	&:focus {
+		outline: 4px solid var(--blue);
+		-webkit-focus-ring-color: var(--blue);
+		outline-offset: 2px;
+		-moz-outline-radius: 2px;
+		-webkit-focus-ring-offset: 2px;
 	}
 }
 

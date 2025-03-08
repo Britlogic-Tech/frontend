@@ -118,7 +118,9 @@ h4 {
 	padding-block-end: 1rem;
 	margin-bottom: 4rem;
 	h1 {
-		font-size: 2rem;
+		font-size: 2.3rem;
+		font-weight: 600;
+		letter-spacing: -0.05rem;
 	}
 }
 
@@ -384,7 +386,7 @@ footer {
 .grid-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 2rem;
+	gap: 1rem;
 	margin: 2rem auto;
 	justify-content: center;
 }

@@ -12,6 +12,18 @@
 	cursor: pointer;
 }
 
+a {
+	&:focus,
+	&:focus-within {
+		outline: 4px solid var(--blue);
+		border-radius: 4px;
+		-webkit-focus-ring-color: var(--blue);
+		outline-offset: 2px;
+		-moz-outline-radius: 2px;
+		-webkit-focus-ring-offset: 2px;
+	}
+}
+
 .button {
 	@extend %button-template;
 	.layout {

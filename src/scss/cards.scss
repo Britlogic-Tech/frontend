@@ -110,11 +110,11 @@
 		grid-template-rows: 200px auto;
 		grid-template-areas: "cardimage" "cardcontent";
 		gap: 1rem;
-		flex: 1 0 300px;
+		flex: 1 0 345px;
 		color: var(--primary-text);
 		width: 100%;
 		min-width: 200px;
-		max-width: 325px;
+		max-width: 345px;
 		min-height: 300px;
 		.service-card-image {
 			grid-area: cardimage;
@@ -141,7 +141,7 @@
 			position: relative;
 			&.has-cta {
 				p {
-					margin-bottom: 3rem !important;
+					margin-bottom: 4rem !important;
 				}
 			}
 		}

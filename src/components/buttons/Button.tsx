@@ -1,9 +1,10 @@
+"use client";
 import { FormEvent } from "react";
 import clsx from "clsx";
 import Icons from "@/components/icons";
 type GeneralButtonPropsT = {
 	isDisabled?: boolean;
-	variant?: "primary" | "secondary";
+	variant?: "primary" | "secondary" | "link";
 	type?: "button" | "submit" | "reset";
 	iconName?: string;
 	onClick?: () => void;
