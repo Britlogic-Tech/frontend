@@ -11,13 +11,11 @@ export const navigationData: NavigationData[] = [
 	{
 		title: "Our services",
 		url: "/services",
-		viewName: "NavBarServices",
 		items: gatNavigationDataItems(),
 	},
 	{
 		title: "About us",
 		url: "/about",
-		viewName: "NavBarAboutUs",
 		items: [
 			{
 				title: "About BritLogic",
@@ -37,4 +35,5 @@ export const navigationData: NavigationData[] = [
 		],
 	},
 	{ title: "Our clients", url: "/clients" },
+	{ title: "Career", url: "/career" },
 ];
