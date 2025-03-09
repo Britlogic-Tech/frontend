@@ -1,6 +1,7 @@
 import Main from "@/components/structure/Main";
 import Services from "@/app/services/Services";
 import ImageHero from "@/components/ui/heros/ImageHero";
+import Billboard from "@/components/ui/heros/Billboard";
 import TextHero from "@/components/ui/heros/TextHero";
 import CitationHero from "@/components/ui/heros/CitationHero";
 import Section from "@/components/structure/Section";
@@ -10,13 +11,13 @@ import Link from "next/link";
 const Home = () => {
 	return (
 		<>
-			<TextHero
-				title="WHERE INNOVATION<br>MEETS EXPERTISE!"
-				subtitle="Cutting-edge software solutions to drive businesses forward"
-				cta={{
-					text: "Contact an expert",
-					href: "/contact",
+			<Billboard
+				image={{
+					src: "/images/hero_001.jpg",
+					alt: "hero full image",
 				}}
+				subtitle="Welcome to Britlogic"
+				title="WHERE INNOVATION<br>MEETS EXPERTISE!"
 			/>
 
 			<Main>
