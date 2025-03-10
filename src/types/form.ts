@@ -1,10 +1,19 @@
-export type FormData = {
-	firstName: string;
-	lastName: string;
-	email: string;
-	phone: string;
-	company: string;
-	message: string;
-};
+// filepath: /src/types/form.ts
+export interface FormData {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone?: string;
+    company?: string;
+    message: string;
+}
 
-export type FormErrors = Partial<FormData> & { submit?: string };
+export interface FormErrors {
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    phone?: string;
+    company?: string;
+    message?: string;
+    submit?: string;
+}

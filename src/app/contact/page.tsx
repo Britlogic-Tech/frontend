@@ -9,8 +9,8 @@ export default function Page() {
 			<TextHero title="Contact our experts to see how BritLogic can transform your business" />
 
 			<Main className="mb-12 min-h-dvh">
-				<CitationHero subtitle="Let's innovate together!">
-					<p>
+				<CitationHero title="Let's innovate together!">
+					<p className="w-full text-center">
 						Get in touch with us today to discuss how we can help you harness the power of
 						technology to achieve your goals.
 					</p>

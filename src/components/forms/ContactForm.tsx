@@ -4,6 +4,9 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { validate } from "@/lib/validateForm";
 import Button from "@/components/buttons/Button";
 import { Section } from "@/components/structure/core";
+import SubmissionStatus from "./SubmissionStatus";
+
+const CONTACT_US_API_URL = "/api/submitContact";
 
 export default function ContactForm({ title }: { title?: string }) {
 	const [formData, setFormData] = useState<FormData>({
@@ -39,43 +42,62 @@ export default function ContactForm({ title }: { title?: string }) {
 		setErrors({});
 		setIsSubmitting(true);
 
-		// Simulate form submission
 		try {
-			// Replace with actual API call
-			await new Promise<void>((resolve) => setTimeout(resolve, 1000));
-			setSubmitSuccess(true);
-			setFormData({
-				firstName: "",
-				lastName: "",
-				email: "",
-				phone: "",
-				company: "",
-				message: "",
+			// Send data to API endpoint
+			const response = await fetch(CONTACT_US_API_URL, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
 			});
+
+			const result = await response.json();
+
+			if (result.success) {
+				setSubmitSuccess(true);
+				setFormData({
+					firstName: "",
+					lastName: "",
+					email: "",
+					phone: "",
+					company: "",
+					message: "",
+				});
+			} else {
+				throw new Error(result.message || "Failed to submit form");
+			}
 		} catch (error) {
 			console.error("Form submission error:", error);
-			setErrors({ submit: "There was a problem submitting your form. Please try again." });
+			setErrors({
+				submit:
+					error instanceof Error
+						? error.message
+						: "There was a problem submitting your form. Please try again.",
+			});
 		} finally {
 			setIsSubmitting(false);
 		}
 	};
 
+	if (submitSuccess) {
+		return (
+			<SubmissionStatus
+				status={{
+					success: submitSuccess,
+					message:
+						"Thank you for your message! We have received your inquiry and will get back to you shortly.",
+				}}
+			/>
+		);
+	}
 	return (
 		<Section className="w-full mx-auto">
 			<div className="form-contact">
 				{title && <h2>{title}</h2>}
 
 				<div>
-					{submitSuccess ? (
-						<div className="bg-green-50 border border-green-200 text-green-700 p-6 rounded-lg text-center">
-							<h3 className="text-xl font-semibold mb-2">Thank you for your message!</h3>
-							<p>We&aposve received your inquiry and will get back to you shortly.</p>
-							<Button
-								onClick={() => setSubmitSuccess(false)}
-								label="Send another message"
-							/>
-						</div>
-					) : (
+					{!submitSuccess && (
 						<div>
 							<form
 								onSubmit={handleSubmit}

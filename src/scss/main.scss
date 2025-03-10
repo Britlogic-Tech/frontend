@@ -588,6 +588,10 @@ footer {
 	font-weight: 100;
 	color: var(--primary-text);
 	margin-inline: auto;
+	.form-hint {
+		font-size: 0.7rem;
+		color: var(--gray-7);
+	}
 	h2 {
 		margin: 0 0 0.5rem 0;
 		color: var(--accent);
@@ -643,4 +647,38 @@ footer {
 
 .form-application {
 	@extend .form-contact;
+}
+
+.submission-status {
+	text-align: center;
+	width: 100%;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	border: 2px solid var(--gray-5);
+	h2 {
+		color: var(--good);
+		font-size: 3rem;
+		font-weight: 400;
+		line-height: 120%;
+		margin: 0;
+		margin-bottom: 1.5rem;
+		padding: 0;
+	}
+	&.good {
+		color: var(--good);
+		h2 {
+			color: var(--good);
+		}
+	}
+	&.bad {
+		border-color: var(--bad) !important;
+		color: var(--bad);
+		h2 {
+			color: var(--bad);
+		}
+	}
+	p {
+		font-size: 1rem;
+		color: var(--primary-text);
+	}
 }
