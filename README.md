@@ -43,27 +43,31 @@ nvm install 22
 nvm use 22
 ```
 
-2- Clone the repo and install dependencies
+1- Clone the repo
+
+2- install dependencies
 
 ```bash
 npm install
 ```
 
-3- Run the development server:
+3- create `.env` file from `.env_example` replacing the placeholders with your actual data
+
+4- Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-5- Make sure to build production grade for serving on production
+6- Make sure to build production grade for serving on production
 
 ```bash
 npm run build
 ```
 
-6- You can start a built-in Node server by running `start` (only after `build`)
+7- You can start a built-in Node server by running `start` (only after `build`)
 
 ```bash
 npm run start
