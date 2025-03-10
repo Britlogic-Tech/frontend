@@ -4,6 +4,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import ContainerWithSidebar from "@/components/structure/ContainerWithSidebar";
 import Main from "@/components/structure/Main";
 import SideBar from "@/components/ui/SideBar";
+import getDataBySlug from "@/lib/getDataBySlug";
 
 type ParamsT = Promise<{ slug: string }>;
 
@@ -11,12 +12,8 @@ export default async function page({ params }: { params: ParamsT }) {
 	const { slug } = await params;
 	if (!slug) return <div>Not found</div>;
 
-	function serviceFinder<T extends { slug: string }>(set: Array<T>, slug: string): T | undefined {
-		return set.find((s) => slug === s.slug);
-	}
-
-	const service = serviceFinder(services, slug);
-	const serviceCard = serviceFinder(servicesCardsData, slug);
+	const service = getDataBySlug(services, slug);
+	const serviceCard = getDataBySlug(servicesCardsData, slug);
 
 	if (!service || !serviceCard) return <div>Bad slug! {slug}</div>;
 

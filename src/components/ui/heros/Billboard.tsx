@@ -28,8 +28,8 @@ const ImageHero = ({
 }: ImageHeroPropsT) => {
 	return (
 		<div className="billboard">
-			<div className="layout">
-				<div className="hero-image">
+			<div className="billboard-layout">
+				<div className="billboard-image">
 					<Image
 						src={image.src}
 						alt={image.alt || ""}
@@ -37,8 +37,8 @@ const ImageHero = ({
 					/>
 
 					<Container>
-						<div className="hero-text">
-							<div className={clsx("backplate", backplate)}>
+						<div className="billboard-text">
+							<div className={clsx("billboard-backplate", backplate)}>
 								{subtitle && <h3 dangerouslySetInnerHTML={{ __html: subtitle }} />}
 								{title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
 								{children && <div className="hero-html">{children}</div>}

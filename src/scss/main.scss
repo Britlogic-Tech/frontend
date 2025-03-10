@@ -238,8 +238,8 @@ footer {
 	position: relative;
 	width: 100%;
 	container: billboard / inline-size;
-	.layout {
-		.hero-image {
+	.billboard-layout {
+		.billboard-image {
 			height: calc(100dvh - 100px);
 			grid-area: heroimage;
 			background-size: contain;
@@ -255,7 +255,7 @@ footer {
 				object-fit: cover;
 			}
 		}
-		.hero-text {
+		.billboard-text {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -279,7 +279,7 @@ footer {
 			font-weight: 400;
 			line-height: 100%;
 		}
-		.backplate {
+		.billboard-backplate {
 			position: relative;
 			max-width: 70% !important;
 			padding: 1rem;
@@ -290,7 +290,7 @@ footer {
 			align-items: flex-start;
 			gap: 12px;
 			z-index: 10;
-			margin-top: -25%;
+			margin-top: -20%;
 			&.transparent {
 				background-color: transparent;
 				color: var(--primary-text);
@@ -309,37 +309,34 @@ footer {
 	}
 
 	@container billboard (width <= 950px) {
-		.layout {
-			.backplate {
+		.billboard-layout {
+			.billboard-backplate {
 				max-width: 90% !important;
 				margin-top: 0;
 			}
-			.hero-image {
+			.billboard-image {
 				height: 500px;
-			}
-			h2 {
-				font-size: 2rem;
-			}
-			h3 {
-				font-size: 1rem;
 			}
 		}
 	}
 
 	@container billboard (width <= 768px) {
-		.layout {
-			.backplate {
+		.billboard-layout {
+			.billboard-backplate {
 				max-width: 90% !important;
 				margin-top: 0;
 			}
-			.hero-image {
+			.billboard-image {
 				height: 300px;
 			}
 			h2 {
 				font-size: 2rem;
+				text-align: center;
 			}
 			h3 {
-				font-size: 1rem;
+				width: 100%;
+				font-size: 1.3rem;
+				text-align: center;
 			}
 		}
 	}
@@ -589,15 +586,18 @@ footer {
 	max-width: 650px;
 	min-width: 200px;
 	font-weight: 100;
-	color: var(--accent);
+	color: var(--primary-text);
+	margin-inline: auto;
 	h2 {
 		margin: 0 0 0.5rem 0;
-		color: var(--accent-hot) !important;
+		color: var(--accent);
 		font-size: 150%;
 		font-weight: 400;
 		line-height: 120%;
-		padding: 0;
-		text-shadow: 0 0 5px rgba(99, 3, 116, 0.5);
+		padding: 0 0 1rem 0;
+		text-shadow: 0 0 5px rgba(5, 0, 6, 0.272);
+		width: 100%;
+		text-align: center;
 	}
 	form {
 		display: grid;
@@ -607,13 +607,13 @@ footer {
 			gap: 0.5rem;
 			label {
 				font-size: 0.8rem;
-				color: var(--accent-hot);
+				color: var(--accent);
 			}
 			input,
 			textarea {
 				padding: 0.5rem;
 				border-radius: 0.25rem;
-				border: 1px solid var(--accent-hot);
+				border: 1px solid var(--accent);
 				font-size: 1rem;
 				color: var(--primary-text);
 			}
@@ -639,4 +639,8 @@ footer {
 			text-align: center !important;
 		}
 	}
+}
+
+.form-application {
+	@extend .form-contact;
 }

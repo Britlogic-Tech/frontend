@@ -17,7 +17,7 @@ const Home = () => {
 					alt: "hero full image",
 				}}
 				subtitle="Welcome to Britlogic"
-				title="WHERE INNOVATION<br>MEETS EXPERTISE!"
+				title="Where innovation<br>meets expertise!"
 			/>
 
 			<Main>
