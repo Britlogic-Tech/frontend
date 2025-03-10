@@ -39,12 +39,12 @@ const ImageHero = ({
 
 	return (
 		<div
-			className={clsx("hero-image", className, {
+			className={clsx("hero-general", className, {
 				"image-full": !textSide,
 			})}
 		>
 			<Container>
-				<div className={clsx("layout", style_imageSide)}>
+				<div className={clsx("hero-layout", style_imageSide)}>
 					<div className="hero-image">
 						<Image
 							src={image.src}

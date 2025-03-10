@@ -182,7 +182,7 @@ footer {
 .hero-citation {
 	container: citationhero / inline-size;
 	--minHeight: 200px;
-	padding: 3rem 2rem;
+	padding: 3rem 0;
 	min-height: var(--minHeight);
 	.hero-text {
 		position: relative;
@@ -198,7 +198,7 @@ footer {
 
 	.backplate {
 		position: relative;
-		max-width: 70% !important;
+		max-width: 70%;
 		padding: 1rem;
 		border-radius: 0.5rem;
 		display: flex;
@@ -224,6 +224,13 @@ footer {
 			line-height: 120%;
 			margin-block-end: 2rem;
 		}
+	}
+}
+@container citationhero (width<=600px) {
+	.backplate {
+		max-width: 100% !important;
+		width: 100%;
+		padding: 0;
 	}
 }
 
@@ -338,16 +345,17 @@ footer {
 	}
 }
 
-.hero-image {
+.hero-general {
 	--minHeight: 300px;
 	&.image-full,
 	&.textual {
 		--minHeight: 500px !important;
 	}
-	container: heroimage / inline-size;
+	container: herogeneral / inline-size;
 	background-color: var(--white);
 	min-height: var(--minHeight, 300px);
-	.layout {
+
+	.hero-layout {
 		width: 100%;
 		position: relative;
 		&.image-onside {
@@ -430,7 +438,7 @@ footer {
 
 		.backplate {
 			position: relative;
-			max-width: 70% !important;
+			max-width: 70%;
 			padding: 1rem;
 			border-radius: 0.5rem;
 
@@ -472,6 +480,23 @@ footer {
 				font-weight: 400;
 				line-height: 100%;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.backplate {
+		max-width: 100% !important;
+	}
+	h2 {
+		font-size: 2.5rem !important;
+	}
+	.hero-layout {
+		grid-template-areas: "heroimage" "herotext" !important;
+		grid-template-columns: 100% !important;
+		grid-template-rows: auto auto !important;
+		.hero-image {
+			height: 300px;
 		}
 	}
 }

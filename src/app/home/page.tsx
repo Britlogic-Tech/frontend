@@ -35,10 +35,10 @@ const Home = () => {
 						the ever-evolving technological landscape.
 					</p>
 				</CitationHero>
-				<Section>
-					<Services />
-				</Section>
 			</Main>
+			<Section>
+				<Services />
+			</Section>
 
 			<ImageHero
 				image={{
@@ -115,7 +115,7 @@ const Home = () => {
 
 			<TextHero title="A few of our amazing clients">
 				<Link
-					className="max-w-[450px]"
+					className="w-full xl:max-w-[450px]"
 					href="/clients"
 				>
 					<Image

@@ -16,9 +16,9 @@ type TextHeroPropsT = {
 
 const TextHero = ({ cta, title, subtitle, children, className }: TextHeroPropsT) => {
 	return (
-		<div className={clsx("hero-image", "textual", className)}>
+		<div className={clsx("hero-general", "textual", className)}>
 			<Container>
-				<div className="layout textual">
+				<div className="hero-layout textual">
 					<div className="hero-text">
 						<div className="backplate transparent">
 							<h2 dangerouslySetInnerHTML={{ __html: title }} />

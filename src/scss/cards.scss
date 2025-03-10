@@ -163,10 +163,14 @@
 		align-self: flex-end;
 	}
 
-	@media screen and (max-width: 650px) {
+	@media screen and (max-width: 850px) {
 		.service-card-layout {
 			flex: 1 0 0;
 			max-width: 100%;
+		}
+		.card-cta {
+			justify-self: center;
+			align-self: center;
 		}
 	}
 }
