@@ -239,3 +239,86 @@
 		font-size: 0.7rem;
 	}
 }
+
+.badge {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	font-size: 0.8rem;
+	border-radius: 1000px;
+	user-select: none;
+	h3 {
+		font-size: 0.8rem;
+		font-weight: 700;
+		line-height: 120%;
+	}
+	p {
+		font-size: 0.6rem;
+	}
+	background-color: var(--gray-1);
+	color: var(--gray-7);
+	&.dark {
+		background-color: var(--primary);
+		color: var(--gray-4);
+		&.interactive {
+			&:hover {
+				box-shadow: 0 4px 10px var(--shadow-heavy);
+			}
+		}
+	}
+}
+
+.job-list-card {
+	padding-block: 1rem;
+	border-bottom: 1px solid var(--gray-5);
+	.description-excerpt {
+		font-size: 1rem;
+		line-height: 150%;
+		padding-inline: 1rem;
+		margin-block: 0.5rem;
+		border-left: 1px solid var(--gray-5);
+	}
+	h2 {
+		padding-block-start: 0.25rem;
+		margin: 0;
+	}
+	.icon-row {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 8px;
+		.row-icon {
+			object-fit: contain;
+		}
+	}
+}
+
+.job-description {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 8px;
+
+	ul {
+		list-style-type: disc;
+		padding-inline-start: 1rem;
+	}
+	.job-title {
+		@extend h2;
+		font-size: 3rem;
+		font-weight: 400;
+		line-height: 120%;
+	}
+	.job-description-section {
+		.job-description-title {
+			padding-block: 0.5rem;
+			font-size: 2rem;
+			font-weight: 400;
+			line-height: 120%;
+		}
+		.job-description-content {
+			font-size: 1rem;
+			line-height: 150%;
+		}
+	}
+}
