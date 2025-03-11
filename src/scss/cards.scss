@@ -2,7 +2,7 @@
 @use "templates";
 
 .testimonial-card {
-	container: tetimonialCard / inline-size;
+	container: testimonialCard / inline-size;
 	overflow: hidden;
 	position: relative;
 	margin-block: 3rem;
@@ -81,14 +81,14 @@
 			}
 		}
 	}
-	@container tetimonialCard (width <678px) {
+
+	@container testimonialCard (width <678px) {
 		.testimonial-card-layout {
 			grid-template-areas: "cardimage" "cardcontent";
 			grid-template-rows: 200px 1fr;
 			grid-template-columns: 1fr;
 			border: 1px solid silver;
 			border-radius: 12px;
-			margin-inline: -1rem;
 			padding: 0.5rem;
 			background-color: var(--gray-4);
 			gap: 0;
@@ -96,8 +96,15 @@
 				grid-area: cardcontent;
 				font-style: italic;
 				border: none;
+				padding-inline: 0 0.5rem 1rem 0;
 			}
 		}
+	}
+}
+@media screen and (max-width: 678px) {
+	.testimonial-card {
+		margin-block: 1.25rem;
+		padding: 0;
 	}
 }
 

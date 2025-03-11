@@ -36,21 +36,25 @@ export default function Page() {
 				}}
 				textSide="right"
 				title="Affordable & flexi plans for startups"
-				html={`Absolutely! When it comes to launching a startup, affordability and flexibility are paramount. Here are some key considerations for affordable and flexible plans:
-				<ul>
-					<li>Lean Operations</li>
-					<li>Bootstrapping</li>
-					<li>Flexible Work Arrangements</li>
-					<li>Subscription-Based Services</li>
-				</ul>`}
 				cta={{
 					text: "Let's Talk",
 					href: "/contact",
 				}}
-			/>
+			>
+				<div>
+					Absolutely! When it comes to launching a startup, affordability and flexibility are
+					paramount. Here are some key considerations for affordable and flexible plans:
+					<ul>
+						<li>Lean Operations</li>
+						<li>Bootstrapping</li>
+						<li>Flexible Work Arrangements</li>
+						<li>Subscription-Based Services</li>
+					</ul>
+				</div>
+			</ImageHero>
 			<Main>
 				<ContainerLongText>
-					<p>
+					<p className="pt-4">
 						At the heart of their approach is a dedication to understanding each client&apos;s
 						specific challenges and goals, enabling them to deliver tailored solutions that not only
 						meet but exceed expectations. Their proven track record of delivering projects on time
@@ -58,7 +62,7 @@ export default function Page() {
 						software development industry.
 					</p>
 					{testimonies && testimonies[1] && <TestimonialCard {...testimonies[1]} />}
-					<div className="w-[500px] h-[500px] m-auto">
+					<div className="w-full m-auto lg:max-w-[450px]">
 						<Image
 							src="/images/partners/partners.png"
 							alt="Our Partners"

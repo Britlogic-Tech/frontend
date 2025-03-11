@@ -37,6 +37,11 @@ const Navigation = () => {
 			</div>
 			<div className={`narrow-nav-bar ${isOpen ? "active" : ""}`.trim()}>
 				<div className="navbar-items-wrapper-narrow">
+					<NavBarItem
+						onClick={handleCloseMenu}
+						label={"Home"}
+						href={"/"}
+					/>
 					{navigationData.map((navItem) => (
 						<NavBarItem
 							onClick={handleCloseMenu}
