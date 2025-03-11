@@ -11,7 +11,7 @@ export default function Page() {
 				subtitle="We are always looking for talented individuals to join our team"
 			/>
 
-			<Main className="mb-12 min-h-dvh">
+			<Main className="lg:mb-12 min-h-dvh">
 				<JobsList jobsData={jobsData} />
 			</Main>
 		</>

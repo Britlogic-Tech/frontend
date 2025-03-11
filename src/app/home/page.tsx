@@ -48,8 +48,8 @@ const Home = () => {
 				textSide="right"
 				title="Affordable & flexi plans for startups"
 				cta={{
-					text: "hero cta",
-					href: "/",
+					text: "Contact our experts",
+					href: "/contact",
 				}}
 			>
 				<div>

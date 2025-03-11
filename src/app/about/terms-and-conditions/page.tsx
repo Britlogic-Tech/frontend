@@ -12,7 +12,7 @@ export default function page() {
 				referrer="/"
 			/>
 
-			<Main className="mb-12 min-h-dvh">
+			<Main className="lg:mb-12 min-h-dvh">
 				<ContainerLongText>
 					<Section>
 						<div>

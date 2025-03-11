@@ -11,7 +11,7 @@ type NavbarPropsT = {
 	children: React.ReactNode;
 };
 
-const NavigationBar = ({ className, id, children }: NavbarPropsT) => {
+const NavigationBar = ({ className = "", id, children }: NavbarPropsT) => {
 	const router = useRouter();
 	const handleClick = () => {
 		router.push("/contact");

@@ -27,7 +27,7 @@ export default function JobsList({ jobsData }: { jobsData: JobOpprtunityT[] }) {
 							className="max-w-max my-4"
 							iconName="ChevronRight"
 							iconPosition="right"
-							type="secondary"
+							type="primary"
 							label="View Job"
 						/>
 					</Link>

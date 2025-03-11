@@ -11,7 +11,7 @@ export default function page() {
 				subtitle="Your privacy is important to us, and we are committed to protecting your personal information and ensuring transparency in how we handle it."
 				referrer="/"
 			/>
-			<Main className="mb-12 min-h-dvh">
+			<Main className="lg:mb-12 min-h-dvh">
 				<ContainerLongText>
 					<Section>
 						<Article>
