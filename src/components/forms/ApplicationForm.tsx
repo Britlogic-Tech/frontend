@@ -215,6 +215,7 @@ export default function ApplicationForm({
 						/>
 					</div>
 					<Button
+						className="mt-6 w-full"
 						type="submit"
 						label={isSubmitting ? "Submitting..." : "Submit Application"}
 						isDisabled={isSubmitting}

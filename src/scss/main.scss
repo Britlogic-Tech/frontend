@@ -600,6 +600,7 @@ footer {
 	font-weight: 100;
 	color: var(--primary-text);
 	margin-inline: auto;
+	margin-block-end: 4rem;
 	.form-hint {
 		font-size: 0.7rem;
 		color: var(--gray-7);
@@ -659,6 +660,15 @@ footer {
 
 .form-application {
 	@extend .form-contact;
+	form {
+		display: block;
+	}
+	input {
+		width: 100%;
+	}
+	.form-group {
+		width: 100%;
+	}
 }
 
 .submission-status {

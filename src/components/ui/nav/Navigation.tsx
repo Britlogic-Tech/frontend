@@ -4,6 +4,8 @@ import { useState } from "react";
 import { navigationData } from "@/data/navigation";
 import NavBarItem from "./NavBarItem";
 import HamburgerMenu from "./HamburgerMenu";
+import Button from "@/components/buttons/Button";
+import Link from "next/link";
 
 const Navigation = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +45,19 @@ const Navigation = () => {
 							href={navItem.url}
 						/>
 					))}
+					<Link
+						className=" mt-4"
+						href="/contact"
+					>
+						<Button
+							onClick={handleCloseMenu}
+							className="navbar-item"
+							iconName="ChevronRight"
+							iconPosition="right"
+							variant="primary"
+							label="Contact Us"
+						/>
+					</Link>
 				</div>
 			</div>
 		</>

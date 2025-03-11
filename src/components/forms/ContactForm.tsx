@@ -101,7 +101,7 @@ export default function ContactForm({ title }: { title?: string }) {
 						<div>
 							<form
 								onSubmit={handleSubmit}
-								className="space-y-6"
+								className="space-y-2"
 							>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 									<div>
@@ -205,6 +205,7 @@ export default function ContactForm({ title }: { title?: string }) {
 								<div className="flex justify-center">
 									<Button
 										isDisabled={isSubmitting}
+										className="w-full"
 										label={isSubmitting ? "Sending..." : "Send Message"}
 										variant="primary"
 										type="submit"

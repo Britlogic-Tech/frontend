@@ -52,7 +52,7 @@
 			}
 
 			.navbar-items-wrapper-narrow {
-				padding: 3rem 2.5rem;
+				padding: 3rem 1.5rem;
 				height: 100%;
 				display: flex;
 				flex-flow: column nowrap;
@@ -65,8 +65,7 @@
 					font-size: 1rem;
 					font-weight: 500;
 					white-space: nowrap;
-					padding: 1rem;
-					margin-inline: -1rem;
+					padding: 1rem 2rem;
 					border-bottom: 1px solid silver;
 					border-radius: 8px;
 					&:hover {
@@ -89,7 +88,9 @@
 		display: none;
 		top: 65px;
 		left: 0;
-		width: 500px;
+		// width: 100%;
+		max-width: 100%;
+		min-width: max-content;
 		height: 100%;
 		background-color: var(--gray-2);
 		transition: transform 0.3s ease-in-out;
