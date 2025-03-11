@@ -45,6 +45,10 @@ nvm use 22
 
 1- Clone the repo
 
+```bash
+git clone git@github.com:Britlogic-Tech/frontend.git
+```
+
 2- install dependencies
 
 ```bash

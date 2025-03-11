@@ -44,8 +44,8 @@ export default function Page() {
 					<li>Subscription-Based Services</li>
 				</ul>`}
 				cta={{
-					text: "hero cta",
-					href: "/",
+					text: "Let's Talk",
+					href: "/contact",
 				}}
 			/>
 			<Main>

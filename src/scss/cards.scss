@@ -139,6 +139,7 @@
 			min-height: 100%;
 			height: 100%;
 			position: relative;
+			color: var(--primary-text);
 			&.has-cta {
 				p {
 					margin-bottom: 4rem !important;
@@ -149,6 +150,7 @@
 			font-size: 1.5rem;
 			line-height: 120%;
 			min-height: 4ch;
+			color: var(--primary-text);
 		}
 		p {
 			font-size: 1rem;

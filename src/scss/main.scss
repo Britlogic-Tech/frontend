@@ -35,6 +35,9 @@ h4 {
 .subsection {
 	margin-block: 1rem;
 	padding-inline-start: 1rem;
+	h3 {
+		color: var(--secondary);
+	}
 }
 
 .container {
@@ -50,11 +53,12 @@ h4 {
 	background-position: right bottom;
 	background-attachment: fixed;
 	container: textpages/ inline-size;
-	padding-block-start: 2rem;
+	padding-block-start: 1rem;
 	padding-block-end: 2rem;
 	@media screen and (max-width: 986px) {
 		background: none;
 		padding-inline: 18px;
+		padding-block-start: 0;
 	}
 }
 
@@ -116,11 +120,18 @@ h4 {
 	width: 100%;
 	padding-block-start: 2rem;
 	padding-block-end: 1rem;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 	h1 {
 		font-size: 2.3rem;
 		font-weight: 600;
 		letter-spacing: -0.05rem;
+		line-height: 120%;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.page-header {
+		margin-bottom: 1rem;
 	}
 }
 
@@ -290,7 +301,8 @@ footer {
 			align-items: flex-start;
 			gap: 12px;
 			z-index: 10;
-			margin-top: -20%;
+			margin-top: -10%;
+			margin-left: -20%;
 			&.transparent {
 				background-color: transparent;
 				color: var(--primary-text);
@@ -484,9 +496,9 @@ footer {
 @media screen and (max-width: 850px) {
 	.backplate {
 		max-width: 100% !important;
-	}
-	h2 {
-		font-size: 2.5rem !important;
+		h2 {
+			font-size: 2.5rem !important;
+		}
 	}
 	.hero-layout {
 		grid-template-areas: "heroimage" "herotext" !important;
